@@ -1,21 +1,19 @@
-/*To check if the entered triangle is valid or not*/
-/*Author:Mugdha         Date:22-06-26*/
+/*To calculate the salary of a person*/
+/*Author:Mugdha         Date: 03-07-26*/
+
 #include <stdio.h>
 
 int main()
 {
-    int a1,a2,a3,sum=0;
-    printf("Enter the angles of a triangle one by one: \n");
-    scanf("%d\n%d\n%d",&a1,&a2,&a3);
-    if((0<a1<180)&&(0<a2<180)&&(0<a3<180))
-    {
-        sum = a1 + a2 + a3;
-        if (sum == 180)
-            printf("Valid Triangle");
-        else
-            printf("Invalid Triangle");
-    }
-    else
-        printf("Invalid Triangle");
+    int a,b,c,largest=0,sum=0;
+    printf("Enter the sides of triangles a,b and c\n");
+    scanf("%d\n%d\n%d",&a,&b,&c);
+    largest = (a>b?(a>c?a:c):(b>c?b:c));
+    sum = a + b + c - largest;
+    if(sum>largest)
+        printf("Valid");
+    else    
+        printf("Invalid");
+    
     return 0;
 }
